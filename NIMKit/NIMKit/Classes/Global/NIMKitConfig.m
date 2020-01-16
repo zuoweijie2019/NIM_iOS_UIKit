@@ -37,21 +37,31 @@
 
 - (NSArray *)defaultMediaItems
 {
-    return @[[NIMMediaItem item:@"onTapMediaItemPicture:"
-                    normalImage:[UIImage nim_imageInKit:@"bk_media_picture_normal"]
-                  selectedImage:[UIImage nim_imageInKit:@"bk_media_picture_nomal_pressed"]
-                          title:@"相册"],
+    NIMMediaItem *albumItem = [NIMMediaItem item:@"onTapMediaItemPicture:"
+                                   normalImage:[UIImage nim_imageInKit:@"msg_pic_icon"]
+                                 selectedImage:[UIImage nim_imageInKit:@"msg_pic_icon"]
+                                         title:@"相册"];
              
-             [NIMMediaItem item:@"onTapMediaItemShoot:"
-                    normalImage:[UIImage nim_imageInKit:@"bk_media_shoot_normal"]
-                  selectedImage:[UIImage nim_imageInKit:@"bk_media_shoot_pressed"]
-                          title:@"拍摄"],
+    NIMMediaItem *cameraItem = [NIMMediaItem item:@"onTapMediaItemShoot:"
+                                      normalImage:[UIImage nim_imageInKit:@"msg_camera"]
+                                    selectedImage:[UIImage nim_imageInKit:@"msg_camera"]
+                                            title:@"拍摄"];
              
-             [NIMMediaItem item:@"onTapMediaItemLocation:"
-                    normalImage:[UIImage nim_imageInKit:@"bk_media_position_normal"]
-                  selectedImage:[UIImage nim_imageInKit:@"bk_media_position_pressed"]
-                          title:@"位置"],
-             ];
+    NIMMediaItem *locationItem = [NIMMediaItem item:@"onTapMediaItemLocation:"
+                                        normalImage:[UIImage nim_imageInKit:@"msg_location"]
+                                    selectedImage:[UIImage nim_imageInKit:@"msg_location"]
+                                            title:@"定位"];
+            
+    NIMMediaItem *destroyItem  = [NIMMediaItem item:@"onTapMediaItemDestroy:"
+                                      normalImage:[UIImage imageNamed:@"msg_read_destroy"]
+                                    selectedImage:[UIImage imageNamed:@"msg_read_destroy"]
+                                            title:@"阅后即焚"];
+
+    NIMMediaItem *redpacketItem = [NIMMediaItem item:@"onTapMediaItemRedpacket:"
+                                      normalImage:[UIImage imageNamed:@"msg_gold_icon"]
+                                    selectedImage:[UIImage imageNamed:@"msg_gold_icon"]
+                                            title:@"约会币红包"];
+    return @[albumItem,cameraItem,locationItem,destroyItem,redpacketItem];
 }
 
 
